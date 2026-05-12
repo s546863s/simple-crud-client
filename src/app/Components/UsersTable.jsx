@@ -12,30 +12,18 @@ const UsersTable = ({users}) => {
             <Table.Column>Email</Table.Column>
           </Table.Header>
           <Table.Body>
-            <Table.Row>
-              <Table.Cell>Kate Moore</Table.Cell>
-              <Table.Cell>CEO</Table.Cell>
+
+        {
+            users.map(user =>  <Table.Row key={user._id}>
+              <Table.Cell>{user.name}</Table.Cell>
+              <Table.Cell>{user.role}</Table.Cell>
               <Table.Cell>Active</Table.Cell>
-              <Table.Cell>kate@acme.com</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>John Smith</Table.Cell>
-              <Table.Cell>CTO</Table.Cell>
-              <Table.Cell>Active</Table.Cell>
-              <Table.Cell>john@acme.com</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>Sara Johnson</Table.Cell>
-              <Table.Cell>CMO</Table.Cell>
-              <Table.Cell>On Leave</Table.Cell>
-              <Table.Cell>sara@acme.com</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>Michael Brown</Table.Cell>
-              <Table.Cell>CFO</Table.Cell>
-              <Table.Cell>Active</Table.Cell>
-              <Table.Cell>michael@acme.com</Table.Cell>
-            </Table.Row>
+              <Table.Cell>{user.email}</Table.Cell>
+            </Table.Row> )
+        }
+
+           
+           
           </Table.Body>
         </Table.Content>
       </Table.ScrollContainer>
