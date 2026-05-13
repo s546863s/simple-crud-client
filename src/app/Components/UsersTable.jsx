@@ -1,10 +1,13 @@
+'use client'
 import { Button, Table, AlertDialog } from "@heroui/react";
 import Link from "next/link";
-import { deleteUser } from "../lib/actions";
-const UsersTable = ({ users }) => {
+
+const UsersTable = ({ users, deleteUserAction }) => {
   const handleDelete = async (userID) =>{
 
-    await deleteUser(userID);
+await deleteUserAction(userID);
+
+
 
   }
   return (
